@@ -1,1 +1,22 @@
-<h1>Welcome to Skoolr</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skoolr</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<h1>Skoolr</h1>
+<span> 
+	<%= link_to "Home", '/home' %> | 
+	<%= link_to "Get Started", '/search' %> |
+	<%= link_to "Browse Schools", '/browse' %> |
+	<%= link_to "Login/Signup", '/login' %> |
+	<%= link_to "Admin", '/admin' %>
+</span>
+<br/><br/>
+<%= yield %>
+
+</body>
