@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  schoolName: MyString
+  schoolNumber: 1
+  schoolDistrict: 1
+
+two:
+  schoolName: MyString
+  schoolNumber: 1
+  schoolDistrict: 1
