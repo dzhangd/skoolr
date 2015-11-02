@@ -1,6 +1,6 @@
-<h1>Add school</h1>
+<h1>Edit school</h1>
 
-<%= form_for :school, url: schools_path do |f| %>
+<%= form_for :school, url: schools_path(@school), method: :patch do |f| %>
 
     <% if @school.errors.any? %>
         <div id="error_explanation">
