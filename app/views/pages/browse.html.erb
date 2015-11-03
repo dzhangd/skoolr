@@ -1,15 +1,21 @@
 <div ng-controller="BrowseCtrl">
 	This is the browse page. <br/>
-	<form ng-submit="schoolSearch()"><input ng-model="searchQuery"></input></form><br/>
-	<select size="2">
-		<option ng-repeat="school in searchResults | orderBy: 'name'" ng-click="loadSchoolInfo(school.id)">
-			{{school.name}} 
-		</option>
-	</select><br/>
-	<span ng-hide="!schoolReviews">
-		Reviews:<br/>
-	</span>
-	<span ng-repeat="review in schoolReviews">
-		{{review}}<br/>
-	</span>
+	<div class="height-640 boxed col-md-6">
+		<form ng-submit="schoolSearch()"><input class="width-100p" ng-model="searchQuery"></input></form><br/>
+		<select class="width-100p" style="height:90%;" size="2">
+			<option ng-repeat="school in searchResults | orderBy: 'name'" ng-click="loadSchoolInfo(school.id)">
+				{{school.name}} 
+			</option>
+		</select>
+	</div>
+	<div class="height-640 boxed col-md-6">
+		<span ng-hide="!schoolReviews">
+			<button style="float:right;">Edit</button>
+			<h3> {{schoolName}}</h3>
+			Reviews:<br/>
+		</span>
+		<span ng-repeat="review in schoolReviews">
+			{{review}}<br/>
+		</span>
+	</div>
 </div>

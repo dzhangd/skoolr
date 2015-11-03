@@ -12,6 +12,7 @@ app.controller(
 			$scope.searchResults = $scope.SCHOOLS;
 			//functions
 			$scope.loadSchoolInfo = function(id) {
+				$scope.schoolName = $scope.SCHOOLS[id].name;
 				$scope.schoolReviews = $scope.SCHOOLS[id].reviews;
 			}
 			$scope.schoolSearch = function() {
