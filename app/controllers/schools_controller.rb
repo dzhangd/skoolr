@@ -1,4 +1,7 @@
 class SchoolsController < ApplicationController
+
+	http_basic_authenticate_with name: "admin", password: "admin", only: [:edit, :update, :destroy]
+
 	def index
 		@schools = School.all
 	end
@@ -12,7 +15,7 @@ class SchoolsController < ApplicationController
 	end
 
 	def edit
-		@article = Article.find(params[:id])
+		@school = School.find(params[:id])
 	end
 
 	def create
@@ -33,6 +36,13 @@ class SchoolsController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		@school = School.find(params[:id])
+		@school.destroy
+
+		redirect_to schools_path
 	end
 
 	private
