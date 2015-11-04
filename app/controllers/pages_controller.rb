@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 	end
 	
 	def browse
+		@schools = School.all
 	end
 	
 	def login

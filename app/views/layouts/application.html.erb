@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCrfeBdamRgSevE5UuhMaiRffR1ZSLIIB8&callback=initMap"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -18,7 +19,7 @@
 	<span class="boxed font-24 col-md-2 text-center"><%= link_to "Admin", '/admin' %></span>
 </span>
 <br/><br/>
-<div class="boxed col-md-10">
+<div class="boxed col-md-12">
 	<%= yield %>
 </div>
 

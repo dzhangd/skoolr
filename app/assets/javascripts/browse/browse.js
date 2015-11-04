@@ -4,16 +4,14 @@ app.controller(
 		function($scope) {
 			//variables
 			$scope.test = "Hello World! This is the Angular welcome to the Browse page!"
-			$scope.SCHOOLS = [
-				{id: 0, name: "Windermere Secondary School", reviews: ["The teachers are inspiring", "The school is donut shaped"]},
-				{id: 1, name: "Vancouver Technical Secondary School", reviews: ["It's on a hill", "Sometimes I get lost"]},
-				{id: 2, name: "Cambie Secondary School", reviews: ["It's a pretty building", "Sometimes my kid goes to IKEA for lunch"]}
-			];
+			$scope.SCHOOLS = [];
 			$scope.searchResults = $scope.SCHOOLS;
+			$scope.searchQuery = "";
 			//functions
 			$scope.loadSchoolInfo = function(id) {
 				$scope.schoolName = $scope.SCHOOLS[id].name;
-				$scope.schoolReviews = $scope.SCHOOLS[id].reviews;
+				$scope.schoolAddress = $scope.SCHOOLS[id].address;
+				generateMap($scope.schoolAddress);
 			}
 			$scope.schoolSearch = function() {
 				$scope.searchResults = [];
