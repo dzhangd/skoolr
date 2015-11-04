@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101201546) do
+ActiveRecord::Schema.define(version: 20151103221525) do
+
+  create_table "grades", force: :cascade do |t|
+    t.string   "subject"
+    t.integer  "Grade"
+    t.integer  "AverageMark"
+    t.integer  "school_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "grades", ["school_id"], name: "index_grades_on_school_id"
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"
@@ -19,5 +30,25 @@ ActiveRecord::Schema.define(version: 20151101201546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string   "school_year"
+    t.string   "question"
+    t.string   "grade_group"
+    t.integer  "non_excluded_responses"
+    t.integer  "many_or_all_responses"
+    t.integer  "many_or_all_pct"
+    t.integer  "at_no_time_responses"
+    t.integer  "at_no_time_pct"
+    t.integer  "few_times_responses"
+    t.integer  "few_times_pct"
+    t.integer  "some_times_responses"
+    t.integer  "some_times_pct"
+    t.integer  "school_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "surveys", ["school_id"], name: "index_surveys_on_school_id"
 
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  Grade: 1
+  AverageMark: 1
+  school_id: 
+
+two:
+  subject: MyString
+  Grade: 1
+  AverageMark: 1
+  school_id: 
