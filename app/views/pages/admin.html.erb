@@ -1,4 +1,8 @@
 <div ng-controller="AdminCtrl">
 	<%= link_to 'Add School', new_school_path %><br>
   <%= link_to 'Edit School', controller: 'schools'%>
+  <%= form_tag import_schools_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Import" %>
+  <% end %>
 </div>
