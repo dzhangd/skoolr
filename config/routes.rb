@@ -2,8 +2,10 @@ Rails.application.routes.draw do
 
 
   resources :schools do
+    collection { post :import }
+
     resources :grades
-	resources :surveys
+    resources :surveys
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
