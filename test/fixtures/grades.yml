@@ -2,12 +2,12 @@
 
 one:
   subject: MyString
-  Grade: 1
-  AverageMark: 1
+  grade: 1
+  average_mark: 1
   school_id: 
 
 two:
   subject: MyString
-  Grade: 1
-  AverageMark: 1
+  grade: 1
+  average_mark: 1
   school_id: 

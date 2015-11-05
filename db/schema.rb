@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103221525) do
+ActiveRecord::Schema.define(version: 20151105212846) do
 
   create_table "grades", force: :cascade do |t|
     t.string   "subject"
-    t.integer  "Grade"
-    t.integer  "AverageMark"
+    t.integer  "grade"
+    t.integer  "average_mark"
     t.integer  "school_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "grades", ["school_id"], name: "index_grades_on_school_id"
