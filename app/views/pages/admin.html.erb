@@ -2,10 +2,10 @@
 	<%= link_to 'Add School', new_school_path %><br>
   <%= link_to 'Edit School', controller: 'schools'%><br>
 </div>
-<p>Import from file</p>
+<!-- <p>Import from file</p>
 <%= form_tag import_schools_path, multipart: true do %>
 <%= file_field_tag :file %>
 <%= submit_tag "Import" %>
-<% end %>
+<% end %> -->
 <p>Update from server</p>
 <%= button_to 'Update', fetch_schools_path %>
