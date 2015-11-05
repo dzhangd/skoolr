@@ -50,6 +50,11 @@ class SchoolsController < ApplicationController
 		redirect_to schools_path, notice: "Schools imported."
 	end
 
+	def fetch
+		School.fetch
+		redirect_to schools_path, notice: "Schools imported."
+	end
+
 	private
 		def school_params
 			params.require(:school).permit(:name, :address)

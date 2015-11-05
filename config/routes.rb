@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
 
   resources :schools do
-    collection { post :import }
+    collection { post :import
+    post :fetch }
 
     resources :grades
     resources :surveys
