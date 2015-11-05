@@ -4,9 +4,16 @@ class School < ActiveRecord::Base
 
   def self.import(file)
     xls = Roo::Spreadsheet.open(file)
-    xls.sheet.each(name: 'School Name', address: 'Address') do |hash|
-      School.create! hash
+    xls.each(name: 'SCHOOL_NAME', address: 'ADDRESS') do |hash|
+      if valid?(hash)
+        School.create(name: hash[:name], address: hash[:address])
+      end
     end
   end
 
+  private
+  def self.valid?(hash)
+  	return !School.exists?(name: hash[:name]) && hash[:name] != "SCHOOL_NAME"
+
+  end
 end
