@@ -17,7 +17,7 @@ app.controller(
 				$scope.searchResults = [];
 				var len = $scope.SCHOOLS.length;
 				for (var k = 0; k < len; k++) {
-					if ($scope.SCHOOLS[k].name.toLowerCase().indexOf($scope.searchQuery) != -1) {
+					if ($scope.SCHOOLS[k].name.toLowerCase().indexOf($scope.searchQuery.toLowerCase()) != -1) {
 						$scope.searchResults.push($scope.SCHOOLS[k]);
 					}
 				}
