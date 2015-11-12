@@ -1,8 +1,8 @@
 class School < ActiveRecord::Base
   require 'open-uri'
 
-  has_many :grades
-  has_many :surveys
+  has_many :grades, dependent: :destroy
+  has_many :surveys, dependent: :destroy
   validates :name, presence: true
   validates :address, presence: true
 
