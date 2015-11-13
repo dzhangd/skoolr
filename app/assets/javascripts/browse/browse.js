@@ -7,10 +7,21 @@ app.controller(
 			$scope.SCHOOLS = [];
 			$scope.searchResults = $scope.SCHOOLS;
 			$scope.searchQuery = "";
+			$scope.GRADES = [];
 			//functions
 			$scope.loadSchoolInfo = function(id) {
+				$scope.schoolId = $scope.SCHOOLS[id].index_id;
 				$scope.schoolName = $scope.SCHOOLS[id].name;
 				$scope.schoolAddress = $scope.SCHOOLS[id].address;
+				$scope.schoolGrades = [];
+				var len = $scope.GRADES.length;
+				for (var k = 0; k < len; k++) {
+					if($scope.GRADES[k].school_id == $scope.schoolId)
+					{
+						$scope.schoolGrades.push($scope.GRADES[k]);
+					}
+				}
+				
 				generateMap($scope.schoolAddress);
 			}
 			$scope.schoolSearch = function() {

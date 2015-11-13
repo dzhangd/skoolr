@@ -1,7 +1,11 @@
 <div ng-controller="BrowseCtrl" ng-init="
 	<% @schools.each_with_index do |school, i| %>
-		SCHOOLS.push({id: <%= i%>, name: '<%=school.name%>', address: '<%=school.address%>'});
-	<% end %>">
+		SCHOOLS.push({id: <%= i%>, index_id: <%=school.id%>, name: '<%=school.name%>', address: '<%=school.address%>'});
+		<% school.grades.each_with_index do |grade, i| %>
+			GRADES.push({id: <%= i%>, subject: '<%=grade.subject%>', grade: '<%=grade.grade%>', average_mark: '<%=grade.average_mark%>', school_id: '<%=grade.school_id%>'});
+		<% end %>
+	<% end %>
+	">
 	<div class="height-80vh boxed col-md-6">
 		<form><input class="font-24 width-100p" ng-change="schoolSearch()" ng-model="searchQuery" placeholder="Search"></input></form><br/>
 		<select class="font-24 width-100p" style="height:90%;" size="2">
@@ -14,6 +18,10 @@
 		<span ng-show="schoolName">
 			<h2> {{schoolName}}</h2>
 			<strong>Address:</strong> <br/> {{schoolAddress}}<br/>
+			<br/><strong>Grades (subject, grade, average mark):</strong> <br/> 
+			<option ng-repeat="grade in schoolGrades">
+				{{grade.subject}}, {{grade.grade}}, {{grade.average_mark}}
+			</option>
 			<div id="googleMap"></div>
 		</span>
 	</div>

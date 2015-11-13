@@ -1,4 +1,5 @@
 class GradesController < ApplicationController
+
   def create
     @school = School.find(params[:school_id])
     @grade = @school.grades.create(grade_params)
