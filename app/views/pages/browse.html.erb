@@ -19,9 +19,9 @@
 			<h2> {{schoolName}}</h2>
 			<strong>Address:</strong> <br/> {{schoolAddress}}<br/>
 			<br/><strong>Grades (subject, grade, average mark):</strong> <br/> 
-			<option ng-repeat="grade in schoolGrades">
-				{{grade.subject}}, {{grade.grade}}, {{grade.average_mark}}
-			</option>
+			<div ng-repeat="grade in schoolGrades">
+				<span class="graph" style="padding:0 0 0 {{grade.average_mark}}px;"> {{grade.average_mark}} </span> {{grade.subject}} {{grade.grade}}
+			</div>
 			<div id="googleMap"></div>
 		</span>
 	</div>

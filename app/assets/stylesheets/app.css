@@ -20,6 +20,13 @@
 	width: 100%;
 }
 
+.graph{
+	background-color: #6699cc;
+	text-align: right;
+	margin: 1px;
+	color: white;
+}
+
 #googleMap {
 	float: right;
 	width: 40%;

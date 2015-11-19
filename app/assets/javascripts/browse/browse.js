@@ -18,7 +18,6 @@ app.controller(
 				for (var k = 0; k < len; k++) {
 					if($scope.GRADES[k].school_id == $scope.schoolId) {
 						$scope.schoolGrades.push($scope.GRADES[k]);
-						break;
 					}
 				}
 				
