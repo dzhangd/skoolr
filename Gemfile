@@ -55,3 +55,4 @@ gem 'gmaps4rails'
 
 gem 'roo'
 gem 'roo-xls'
+gem 'devise'
