@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/search' => 'pages#search'
   get '/browse' => 'pages#browse'
   get '/login' => 'pages#login'
-  get '/admin' => 'pages#admin'
+  get '/admin' => 'schools#index'
   
   get '*path' => 'pages#home'
 
