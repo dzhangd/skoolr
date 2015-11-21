@@ -3,7 +3,13 @@ class GradesController < ApplicationController
   def create
     @school = School.find(params[:school_id])
     @grade = @school.grades.create(grade_params)
-    redirect_to school_path(@school)
+	
+	if @grade.save
+		redirect_to school_path(@school)
+	else
+		render 'schools/edit'
+	end
+	
   end
   
   def destroy
