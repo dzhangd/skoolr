@@ -53,6 +53,20 @@ class SchoolsController < ApplicationController
 		redirect_to schools_path, notice: "Schools imported."
 	end
 
+	def favorite
+		type = params[:type]
+		if type == "favorite"
+			current_user.favorites << @school
+			redirect_to :back, notice: "You favorited #{@school.name}"
+
+		elsif type == "unfavorite"
+			current_user.favorites.delete << @school
+			redirect_to :back, notice: "Unfavorited #{@school.name}"
+
+		else
+			redirect_to :back, notice: "Shouldn't get here"
+	end
+
 	private
 		def school_params
 			params.require(:school).permit(:name, :address)
