@@ -4,6 +4,9 @@
 		<% school.grades.each_with_index do |grade, i| %>
 			GRADES.push({id: <%= i%>, subject: '<%=grade.subject%>', grade: '<%=grade.grade%>', average_mark: '<%=grade.average_mark%>', school_id: '<%=grade.school_id%>'});
 		<% end %>
+		<% school.surveys.each_with_index do |survey, i| %>
+			SURVEYS.push({id: <%= i%>, school_year: '<%=survey.school_year%>', question: '<%=survey.question%>', grade_group: '<%=survey.grade_group%>', non_excluded_responses: '<%=survey.non_excluded_responses%>', many_or_all_responses: '<%=survey.many_or_all_responses%>', many_or_all_pct: '<%=survey.many_or_all_pct%>', at_no_time_responses: '<%=survey.at_no_time_responses%>', at_no_time_pct: '<%=survey.at_no_time_pct%>', few_times_responses: '<%=survey.few_times_responses%>', few_times_pct: '<%=survey.few_times_pct%>', some_times_responses: '<%=survey.some_times_responses%>', some_times_pct: '<%=survey.some_times_pct%>', school_id: '<%=survey.school_id%>'});
+		<% end %>
 	<% end %>
 	">
 	<div class="height-80vh boxed col-md-6">
@@ -22,6 +25,10 @@
 			<div ng-repeat="grade in schoolGrades">
 				<span class="graph" style="padding:0 0 0 {{grade.average_mark}}px;"> {{grade.average_mark}} </span> {{grade.subject}} {{grade.grade}}
 			</div>
+			<br/><strong>Surveys:</strong> <br/> 
+			<option ng-repeat="survey in schoolSurveys">
+				{{survey.school_year}}, {{survey.question}}, {{survey.grade_group}}, {{survey.non_excluded_responses}}, {{survey.many_or_all_responses}}, {{survey.many_or_all_pct}}, {{survey.at_no_time_responses}}, {{survey.at_no_time_pct}}, {{survey.few_times_responses}}, {{survey.few_times_pct}}, {{survey.some_times_responses}}, {{survey.some_times_pct}}
+			</option>
 			<div id="googleMap"></div>
 		</span>
 	</div>
