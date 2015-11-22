@@ -1,0 +1,14 @@
+<h2> <%= @school.name %> </h2>
+<strong>Address:</strong> <br/> <%= @school.address %> <br/>
+<br/><strong>Grades (subject, grade, average mark):</strong> <br/> 
+<% @school.grades.each do |grade| %>
+	<span class="graph" style="padding: 0 0 0 <%= grade.average_mark %>px"> <%= grade.average_mark %> </span> <%= grade.subject %> <%= grade.grade %> <br/>
+<% end %>
+<br/><strong>Surveys:</strong> <br/> 
+<% @school.surveys.each do |survey| %>
+	<%= survey.school_year %>, <%= survey.question %>
+<% end %>
+<option ng-repeat="survey in schoolSurveys">
+	{{survey.school_year}}, {{survey.question}}, {{survey.grade_group}}, {{survey.non_excluded_responses}}, {{survey.many_or_all_responses}}, {{survey.many_or_all_pct}}, {{survey.at_no_time_responses}}, {{survey.at_no_time_pct}}, {{survey.few_times_responses}}, {{survey.few_times_pct}}, {{survey.some_times_responses}}, {{survey.some_times_pct}}
+</option>
+<button onclick="generateMap('3139 East 29th Avenue')">load</button>

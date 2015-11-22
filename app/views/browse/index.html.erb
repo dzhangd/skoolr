@@ -1,14 +1,5 @@
-<div ng-controller="BrowseCtrl" ng-init="
-	<% @schools.each_with_index do |school, i| %>
-		SCHOOLS.push({id: <%= i%>, index_id: <%=school.id%>, name: '<%=school.name%>', address: '<%=school.address%>'});
-		<% school.grades.each_with_index do |grade, i| %>
-			GRADES.push({id: <%= i%>, subject: '<%=grade.subject%>', grade: '<%=grade.grade%>', average_mark: '<%=grade.average_mark%>', school_id: '<%=grade.school_id%>'});
-		<% end %>
-		<% school.surveys.each_with_index do |survey, i| %>
-			SURVEYS.push({id: <%= i%>, school_year: '<%=survey.school_year%>', question: '<%=survey.question%>', grade_group: '<%=survey.grade_group%>', non_excluded_responses: '<%=survey.non_excluded_responses%>', many_or_all_responses: '<%=survey.many_or_all_responses%>', many_or_all_pct: '<%=survey.many_or_all_pct%>', at_no_time_responses: '<%=survey.at_no_time_responses%>', at_no_time_pct: '<%=survey.at_no_time_pct%>', few_times_responses: '<%=survey.few_times_responses%>', few_times_pct: '<%=survey.few_times_pct%>', some_times_responses: '<%=survey.some_times_responses%>', some_times_pct: '<%=survey.some_times_pct%>', school_id: '<%=survey.school_id%>'});
-		<% end %>
-	<% end %>
-	">
+<div ng-controller="BrowseCtrl">
+	<!--
 	<div class="height-80vh boxed col-md-6">
 		<form><input class="font-24 width-100p" ng-change="schoolSearch()" ng-model="searchQuery" placeholder="Search"></input></form><br/>
 		<select class="font-24 width-100p" style="height:90%;" size="2">
@@ -17,6 +8,7 @@
 			</option>
 		</select>
 	</div>
+	
 	<div class="height-80vh boxed col-md-6">
 		<span ng-show="schoolName">
 			<h2> {{schoolName}}</h2>
@@ -31,5 +23,21 @@
 			</option>
 			<div id="googleMap"></div>
 		</span>
+	</div>
+	-->
+	<div class="height-80vh boxed col-md-6 scroll-table">
+		<%= form_tag(browse_path, :method => "get") do %>
+			<%= text_field_tag :search, params[:search], placeholder: "Search", class: "font-24 width-100p" %>
+		<% end %>
+		<% @schools.each do |school| %>
+			<%= link_to school.name, browse_path(school), class: "font-24 width-100p btn btn-default", style: "text-align:left;" %>
+		<% end %>
+	</div>
+	
+	<div class="height-80vh boxed col-md-6">
+		<% if !current_page?(:controller => "browse") %>
+			<%= render partial: "show" %>
+			<div id="googleMap"></div>
+		<% end %>
 	</div>
 </div>

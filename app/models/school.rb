@@ -19,6 +19,10 @@ class School < ActiveRecord::Base
     f = open("ftp://webftp.vancouver.ca/OpenData/xls/schools.xls")
     import(f)
   end
+  
+  def self.search(query)
+	where('name LIKE ?', "%" + query + "%").all
+  end
 
   private
   def self.valid?(hash)

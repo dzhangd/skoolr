@@ -38,6 +38,10 @@ h1 {
 	height: 80vh;
 }
 
+.height-70vh {
+	height: 70vh;
+}
+
 .width-100p {
 	width: 100%;
 }
@@ -50,7 +54,6 @@ h1 {
 }
 
 .scroll-table {
-	height: 70vh;
 	overflow: auto;
 }
 
