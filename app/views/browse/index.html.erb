@@ -26,18 +26,17 @@
 	</div>
 	-->
 	<div class="height-80vh boxed col-md-6 scroll-table">
-		<%= form_tag(browse_path, :method => "get") do %>
+		<%= form_tag(browse_index_path, :method => "get") do %>
 			<%= text_field_tag :search, params[:search], placeholder: "Search", class: "font-24 width-100p" %>
 		<% end %>
 		<% @schools.each do |school| %>
-			<%= link_to school.name, browse_path(school), class: "font-24 width-100p btn btn-default", style: "text-align:left;" %>
+			<%= link_to school.name, browse_path(school), :onclick => "generateMap('3139 East29th Avenue')", class: "font-24 width-100p btn btn-default", style: "text-align:left;" %>
 		<% end %>
 	</div>
 	
 	<div class="height-80vh boxed col-md-6">
 		<% if !current_page?(:controller => "browse") %>
 			<%= render partial: "show" %>
-			<div id="googleMap"></div>
 		<% end %>
 	</div>
 </div>
