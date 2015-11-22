@@ -27,3 +27,59 @@
                data: { confirm: 'Are you sure?' } %>
   </p>
 <% end %>
+<h2>Surveys</h2>
+<% @school.surveys.each do |survey| %>
+  <p>
+    <strong>School year</strong>
+    <%= survey.school_year %>
+  </p>
+  <p>
+    <strong>Question</strong>
+    <%= survey.question %>
+  </p>
+  <p>
+    <strong>Grade group</strong>
+    <%= survey.grade_group %>
+  </p>
+  <p>
+    <strong>Non excluded responses</strong>
+    <%= survey.non_excluded_responses %>
+  </p>
+  <p>
+    <strong>Many or all responses</strong>
+    <%= survey.many_or_all_responses %>
+  </p>
+  <p>
+    <strong>Many or all pct</strong>
+    <%= survey.many_or_all_pct %>
+  </p>
+  <p>
+    <strong>At time responses</strong>
+    <%= survey.at_no_time_responses %>
+  </p>
+  <p>
+    <strong>At no time pct</strong>
+    <%= survey.at_no_time_pct %>
+  </p>
+  <p>
+    <strong>Few times responses</strong>
+    <%= survey.few_times_responses %>
+  </p>
+  <p>
+    <strong>Few times pct</strong>
+    <%= survey.few_times_pct %>
+  </p>
+  <p>
+    <strong>Some times responses</strong>
+    <%= survey.some_times_responses %>
+  </p>
+  <p>
+    <strong>Some time pct</strong>
+    <%= survey.some_times_pct %>
+  </p>
+  <p>
+    <%= link_to 'Destroy Survey', [survey.school, survey],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>

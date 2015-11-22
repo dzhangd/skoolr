@@ -1,0 +1,66 @@
+<%= form_for([@school, @school.surveys.build]) do |f| %>
+  <% if @survey && @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@survey.errors.count, "error") %> prohibited
+        this survey from being saved:
+	  </h2>
+      <ul>
+        <% @survey.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+	</div>
+  <% end %>
+  <p>
+    <%= f.label :School_year %><br>
+    <%= f.text_field :school_year %>
+  </p>
+  <p>
+    <%= f.label :Question %><br>
+    <%= f.text_field :question %>
+  </p>
+  <p>
+    <%= f.label :Grade_group %><br>
+    <%= f.text_field :grade_group %>
+  </p>
+  <p>
+    <%= f.label :Non_excluded_responses %><br>
+    <%= f.text_field :non_excluded_responses %>
+  </p>
+  <p>
+    <%= f.label :Many_or_all_responses %><br>
+    <%= f.text_field :many_or_all_responses %>
+  </p>
+  <p>
+    <%= f.label :Many_or_all_pct %><br>
+    <%= f.text_field :many_or_all_pct %>
+  </p>
+  <p>
+    <%= f.label :At_no_time_responses %><br>
+    <%= f.text_field :at_no_time_responses %>
+  </p>
+  <p>
+    <%= f.label :At_no_time_pct %><br>
+    <%= f.text_field :at_no_time_pct %>
+  </p>
+  <p>
+    <%= f.label :Few_times_responses %><br>
+    <%= f.text_field :few_times_responses %>
+  </p>
+  <p>
+    <%= f.label :Few_time_pct %><br>
+    <%= f.text_field :few_times_pct %>
+  </p>
+  <p>
+    <%= f.label :Some_times_responses %><br>
+    <%= f.text_field :some_times_responses %>
+  </p>
+  <p>
+    <%= f.label :Some_time_pct %><br>
+    <%= f.text_field :some_times_pct %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
