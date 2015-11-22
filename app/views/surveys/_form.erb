@@ -13,52 +13,28 @@
 	</div>
   <% end %>
   <p>
-    <%= f.label :School_year %><br>
-    <%= f.text_field :school_year %>
-  </p>
-  <p>
     <%= f.label :Question %><br>
     <%= f.text_field :question %>
   </p>
   <p>
-    <%= f.label :Grade_group %><br>
-    <%= f.text_field :grade_group %>
-  </p>
-  <p>
     <%= f.label :Non_excluded_responses %><br>
-    <%= f.text_field :non_excluded_responses %>
+    <%= f.number_field :non_excluded_responses %>
   </p>
   <p>
     <%= f.label :Many_or_all_responses %><br>
-    <%= f.text_field :many_or_all_responses %>
-  </p>
-  <p>
-    <%= f.label :Many_or_all_pct %><br>
-    <%= f.text_field :many_or_all_pct %>
+    <%= f.number_field :many_or_all_responses %>
   </p>
   <p>
     <%= f.label :At_no_time_responses %><br>
-    <%= f.text_field :at_no_time_responses %>
-  </p>
-  <p>
-    <%= f.label :At_no_time_pct %><br>
-    <%= f.text_field :at_no_time_pct %>
+    <%= f.number_field :at_no_time_responses %>
   </p>
   <p>
     <%= f.label :Few_times_responses %><br>
-    <%= f.text_field :few_times_responses %>
-  </p>
-  <p>
-    <%= f.label :Few_time_pct %><br>
-    <%= f.text_field :few_times_pct %>
+    <%= f.number_field :few_times_responses %>
   </p>
   <p>
     <%= f.label :Some_times_responses %><br>
-    <%= f.text_field :some_times_responses %>
-  </p>
-  <p>
-    <%= f.label :Some_time_pct %><br>
-    <%= f.text_field :some_times_pct %>
+    <%= f.number_field :some_times_responses %>
   </p>
   <p>
     <%= f.submit %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105212846) do
+ActiveRecord::Schema.define(version: 20151122044940) do
 
   create_table "grades", force: :cascade do |t|
     t.string   "subject"
@@ -32,18 +32,12 @@ ActiveRecord::Schema.define(version: 20151105212846) do
   end
 
   create_table "surveys", force: :cascade do |t|
-    t.string   "school_year"
     t.string   "question"
-    t.string   "grade_group"
     t.integer  "non_excluded_responses"
     t.integer  "many_or_all_responses"
-    t.integer  "many_or_all_pct"
     t.integer  "at_no_time_responses"
-    t.integer  "at_no_time_pct"
     t.integer  "few_times_responses"
-    t.integer  "few_times_pct"
     t.integer  "some_times_responses"
-    t.integer  "some_times_pct"
     t.integer  "school_id"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
