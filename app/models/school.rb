@@ -1,6 +1,8 @@
 class School < ActiveRecord::Base
   require 'open-uri'
 
+  has_many :favorite_schools
+  has_many :favorited_by, through: :favorite_schools, source: :user
   has_many :grades, dependent: :destroy
   has_many :surveys, dependent: :destroy
   validates :name, presence: true

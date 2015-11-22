@@ -1,7 +1,5 @@
 class SchoolsController < ApplicationController
 
-	http_basic_authenticate_with name: "admin", password: "admin", only: [:edit, :update, :destroy]
-
 	def index
 		@schools = School.all
 	end
@@ -53,6 +51,22 @@ class SchoolsController < ApplicationController
 	def fetch
 		School.fetch
 		redirect_to schools_path, notice: "Schools imported."
+	end
+
+	def favorite
+		type = params[:type]
+		school = School.find(params[:id])
+		if type == "favorite"
+			current_user.favorites << school
+			redirect_to :back, notice: "You favorited #{school.name}"
+
+		elsif type == "unfavorite"
+			current_user.favorites.delete(school)
+			redirect_to :back, notice: "Unfavorited #{school.name}"
+
+		else
+			redirect_to :back, notice: "Shouldn't get here"
+		end
 	end
 
 	private

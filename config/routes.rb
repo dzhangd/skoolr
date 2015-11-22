@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
 
+  devise_for :admins
+  devise_for :users
   resources :schools do
     collection { post :import
     post :fetch }
 
     resources :grades
     resources :surveys
+
+    put :favorite, on: :member
   end
   
   resources :browse
