@@ -1,5 +1,19 @@
+<<<<<<< HEAD:app/views/browse/index.html.erb
 <div ng-controller="BrowseCtrl">
 	<!--
+=======
+<div ng-controller="BrowseCtrl" ng-init="
+	<% @schools.each_with_index do |school, i| %>
+		SCHOOLS.push({id: <%= i%>, index_id: <%=school.id%>, name: '<%=school.name%>', address: '<%=school.address%>'});
+		<% school.grades.each_with_index do |grade, i| %>
+			GRADES.push({id: <%= i%>, subject: '<%=grade.subject%>', grade: '<%=grade.grade%>', average_mark: '<%=grade.average_mark%>', school_id: '<%=grade.school_id%>'});
+		<% end %>
+		<% school.surveys.each_with_index do |survey, i| %>
+			SURVEYS.push({id: <%= i%>, question: '<%=survey.question%>', non_excluded_responses: '<%=survey.non_excluded_responses%>', many_or_all_responses: '<%=survey.many_or_all_responses%>', at_no_time_responses: '<%=survey.at_no_time_responses%>', few_times_responses: '<%=survey.few_times_responses%>', some_times_responses: '<%=survey.some_times_responses%>', school_id: '<%=survey.school_id%>'});
+		<% end %>
+	<% end %>
+	">
+>>>>>>> 4b56b0666abfb6f6db449e1831b34100a854baa7:app/views/pages/browse.html.erb
 	<div class="height-80vh boxed col-md-6">
 		<form><input class="font-24 width-100p" ng-change="schoolSearch()" ng-model="searchQuery" placeholder="Search"></input></form><br/>
 		<select class="font-24 width-100p" style="height:90%;" size="2">
@@ -19,7 +33,7 @@
 			</div>
 			<br/><strong>Surveys:</strong> <br/> 
 			<option ng-repeat="survey in schoolSurveys">
-				{{survey.school_year}}, {{survey.question}}, {{survey.grade_group}}, {{survey.non_excluded_responses}}, {{survey.many_or_all_responses}}, {{survey.many_or_all_pct}}, {{survey.at_no_time_responses}}, {{survey.at_no_time_pct}}, {{survey.few_times_responses}}, {{survey.few_times_pct}}, {{survey.some_times_responses}}, {{survey.some_times_pct}}
+				{{survey.question}}, {{survey.non_excluded_responses}}, {{survey.many_or_all_responses}}, {{survey.at_no_time_responses}}, {{survey.few_times_responses}}, {{survey.some_times_responses}}
 			</option>
 			<div id="googleMap"></div>
 		</span>
