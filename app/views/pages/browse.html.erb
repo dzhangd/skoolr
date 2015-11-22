@@ -17,6 +17,10 @@
 	<div class="height-80vh boxed col-md-6">
 		<span ng-show="schoolName">
 			<h2> {{schoolName}}</h2>
+      <% if current_user %>
+          <%= link_to "favorite",   favorite_school_path(id: {{schoolId}}, type: "favorite"), method: :put %>
+          <%= link_to "unfavorite", favorite_school_path(id: {{schoolId}}, type: "unfavorite"), method: :put %>
+      <% end %>
 			<strong>Address:</strong> <br/> {{schoolAddress}}<br/>
 			<br/><strong>Grades (subject, grade, average mark):</strong> <br/> 
 			<div ng-repeat="grade in schoolGrades">

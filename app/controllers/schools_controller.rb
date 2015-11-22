@@ -55,16 +55,18 @@ class SchoolsController < ApplicationController
 
 	def favorite
 		type = params[:type]
+		school = School.find(params[:id])
 		if type == "favorite"
-			current_user.favorites << @school
-			redirect_to :back, notice: "You favorited #{@school.name}"
+			current_user.favorites << school
+			redirect_to :back, notice: "You favorited #{school.name}"
 
 		elsif type == "unfavorite"
-			current_user.favorites.delete << @school
-			redirect_to :back, notice: "Unfavorited #{@school.name}"
+			current_user.favorites.delete(school)
+			redirect_to :back, notice: "Unfavorited #{school.name}"
 
 		else
 			redirect_to :back, notice: "Shouldn't get here"
+		end
 	end
 
 	private
