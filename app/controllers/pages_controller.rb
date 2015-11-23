@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
 
-	http_basic_authenticate_with name: "admin", password: "admin", only: [:admin]
 
 	def home
 	end
@@ -16,6 +15,10 @@ class PagesController < ApplicationController
 	end
 	
 	def admin
+	end
+
+	def profile
+		@favorites = current_user.favorites
 	end
 
 end

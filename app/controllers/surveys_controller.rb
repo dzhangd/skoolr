@@ -10,6 +10,13 @@ class SurveysController < ApplicationController
 	end
   end
   
+  def destroy
+    @school = School.find(params[:school_id])
+    @survey = @school.surveys.find(params[:id])
+    @survey.destroy
+    redirect_to school_path(@school)
+  end
+  
   private
     def survey_params
 	  params.require(:survey).permit(:question, :non_excluded_responses, :many_or_all_responses, :at_no_time_responses, :few_times_responses, :some_times_responses)
