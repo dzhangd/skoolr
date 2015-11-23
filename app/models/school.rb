@@ -5,6 +5,9 @@ class School < ActiveRecord::Base
   has_many :surveys, dependent: :destroy
   validates :name, presence: true
   validates :address, presence: true
+  
+  geocoded_by :address
+  after_validation :geocode
 
   def self.import(file)
     xls = Roo::Spreadsheet.open(file, extension: :xls)
@@ -22,6 +25,10 @@ class School < ActiveRecord::Base
   
   def self.search(query)
 	where('name LIKE ?', "%" + query + "%").all
+  end
+  
+  def self.searchNearby(query)
+	where('self.distance_to(query) < 5').all
   end
 
   private

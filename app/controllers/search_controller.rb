@@ -1,20 +1,21 @@
 class SearchController < ApplicationController
 
 	def index
-		@schools = School.all
 		if (params[:search])
-			@schools = School.search(params[:search])
-		else
 			@schools = School.all
+			@schools = @schools.select { |school| school.distance_to(params[:search]) < 3}
+		else
+			@schools = School.none
 		end
 	end
 
 	def show
 		@school = School.find(params[:id])
 		if (params[:search])
-			@schools = School.search(params[:search])
-		else
 			@schools = School.all
+			@schools = @schools.reject { |school| school.distance_to(params[:search]) > 1}
+		else
+			@schools = School.none
 		end
 		render 'index'
 	end

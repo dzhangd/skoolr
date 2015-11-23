@@ -3,6 +3,8 @@ class CreateSchools < ActiveRecord::Migration
     create_table :schools do |t|
       t.string :name
       t.string :address
+	  t.float :latitude
+	  t.float :longitude
 
       t.timestamps null: false
     end
