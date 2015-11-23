@@ -1,4 +1,10 @@
 <h2> <%= @school.name %> </h2>
+<% if current_user %>
+
+      <%= link_to "favorite",   favorite_school_path(@school, type: "favorite"), method: :put %>
+
+      <%= link_to "unfavorite", favorite_school_path(@school, type: "unfavorite"), method: :put %>
+<% end %><br>
 <strong>Address:</strong> <br/> <%= @school.address %> <br/>
 <br/><strong>Grades (subject, grade, average mark):</strong> <br/> 
 <% @school.grades.each do |grade| %>

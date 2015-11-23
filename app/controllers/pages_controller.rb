@@ -17,4 +17,8 @@ class PagesController < ApplicationController
 	def admin
 	end
 
+	def profile
+		@favorites = current_user.favorites
+	end
+
 end

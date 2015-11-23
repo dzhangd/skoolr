@@ -1,0 +1,7 @@
+<%= link_to "Edit Profile", edit_user_registration_path %>
+<h1>Favorites</h1>
+<table>
+  <% @favorites.each do |school| %>
+    <tr><td><%= school.name %></td></tr>
+  <% end %>
+</table>

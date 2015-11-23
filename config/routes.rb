@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/search' => 'pages#search'
   get '/login' => 'pages#login'
   get '/admin' => 'schools#index'
-  
+  get '/profile' => 'pages#profile'
   get '*path' => 'pages#home'
 
   # Example of regular route:
