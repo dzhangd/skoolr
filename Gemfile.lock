@@ -170,8 +170,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-  geocoder
   devise
+  geocoder
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails
