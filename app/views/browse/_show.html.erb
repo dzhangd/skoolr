@@ -14,5 +14,5 @@
 <% @school.surveys.each do |survey| %>
 	<%= survey.question %> <%= survey.non_excluded_responses %> <%= survey.many_or_all_responses %> <%= survey.at_no_time_responses %> <%= survey.few_times_responses %> <%= survey.some_times_responses %>
 <% end %>
-<button onclick="generateMap('<%= @school.address %>')">load</button>
+<script>generateMap('<%= @school.address %>')</script>
 <div id="googleMap"></div>

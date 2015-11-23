@@ -14,5 +14,6 @@ function generateMap(address) {
 			map: map,
 			position: location
 		});
+		map.setCenter(location);
 	});
 }
