@@ -9,13 +9,13 @@ Rails.application.routes.draw do
     resources :surveys
   end
   
+  resources :search
   resources :browse
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root to: 'pages#home'
-  get '/search' => 'pages#search'
   get '/login' => 'pages#login'
   get '/admin' => 'schools#index'
   
