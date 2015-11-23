@@ -12,10 +12,7 @@
 <% end %>
 <br/><strong>Surveys:</strong> <br/> 
 <% @school.surveys.each do |survey| %>
-	<%= survey.question %>
+	<%= survey.question %> <%= survey.non_excluded_responses %> <%= survey.many_or_all_responses %> <%= survey.at_no_time_responses %> <%= survey.few_times_responses %> <%= survey.some_times_responses %>
 <% end %>
-<option ng-repeat="survey in schoolSurveys">
-	{{survey.question}}, {{survey.non_excluded_responses}}, {{survey.many_or_all_responses}}, {{survey.at_no_time_responses}}, {{survey.few_times_responses}}, {{survey.some_times_responses}}
-</option>
 <button onclick="generateMap('<%= @school.address %>')">load</button>
 <div id="googleMap"></div>
