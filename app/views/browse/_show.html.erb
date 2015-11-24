@@ -1,3 +1,27 @@
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#surveyTable tr:nth-child(even) {
+    background-color: #eee;
+}
+table#surveyTable tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#surveyTable th	{
+    background-color: black;
+    color: white;
+}
+</style>
+<div class="scroll-table" style="height:72vh;">
 <h2> <%= @school.name %> </h2>
 <% if current_user %>
 
@@ -11,8 +35,16 @@
 	<span class="graph" style="padding: 0 0 0 <%= grade.average_mark %>px"> <%= grade.average_mark %> </span> <%= grade.subject %> <%= grade.grade %> <br/>
 <% end %>
 <br/><strong>Surveys:</strong> <br/> 
+<table id="surveyTable">
+<tr>
+<th>Question</th><th>Total responses</th><th>many or all</th><th>at no time</th><th>few times</th><th>some times</th>
+</tr>
 <% @school.surveys.each do |survey| %>
-	<%= survey.question %> <%= survey.non_excluded_responses %> <%= survey.many_or_all_responses %> <%= survey.at_no_time_responses %> <%= survey.few_times_responses %> <%= survey.some_times_responses %>
+	<tr>
+		<td><%= survey.question %></td> <td><%= survey.non_excluded_responses %></td> <td><%= survey.many_or_all_responses %></td> <td><%= survey.at_no_time_responses %></td> <td><%= survey.few_times_responses %></td> <td><%= survey.some_times_responses %></td>
+	</tr>
 <% end %>
+</table> 
 <script>generateMap('<%= @school.address %>')</script>
 <div id="googleMap"></div>
+</div>
