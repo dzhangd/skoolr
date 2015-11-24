@@ -13,7 +13,7 @@ class SearchController < ApplicationController
 		@school = School.find(params[:id])
 		if (params[:search])
 			@schools = School.all
-			@schools = @schools.reject { |school| school.distance_to(params[:search]) > 1}
+			@schools = @schools.select { |school| school.distance_to(params[:search]) < 3}
 		else
 			@schools = School.none
 		end

@@ -31,7 +31,7 @@
 			<% end %>
 		<div class="scroll-table" style="height:72vh;">
 			<% @schools.sort_by {|h| h[:name]}.each do |school| %>
-				<%= link_to school.name, browse_path(school), class: "font-24 width-100p btn btn-default", style: "text-align:left;" %>
+				<%= link_to school.name, browse_path(school, :search => params[:search]), class: "font-24 width-100p btn btn-default", style: "text-align:left;" %>
 			<% end %>
 		</div>
 	</div>

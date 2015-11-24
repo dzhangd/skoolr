@@ -9,10 +9,5 @@
 	<%= survey.question %>
 <% end %>
 <%= @school.distance_to(params[:search]) %><br/>
-<% @school.nearbys(10).each do |nearby| %>
-	<% if nearby.distance_to(@school.address) < 5 %>
-	<%= nearby.address %> <%= nearby.distance_to(@school.address) %><br/>
-	<% end %>
-<% end %>
-<script>generateMap('<%= @school.address %>')</script>
+<script>generateMapWithPath('<%= @school.address %>')</script>
 <div id="googleMap"></div>
