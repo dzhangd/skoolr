@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   devise_for :admins
-  devise_for :users
+ devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :schools do
     collection { post :import
     post :fetch }
