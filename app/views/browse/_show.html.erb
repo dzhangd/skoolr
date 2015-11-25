@@ -1,11 +1,12 @@
 <div class="scroll-table" style="height:72vh;">
 <h2> <%= @school.name %> </h2>
+
 <% if current_user %>
-
       <%= link_to "favorite",   favorite_school_path(@school, type: "favorite"), method: :put %>
-
       <%= link_to "unfavorite", favorite_school_path(@school, type: "unfavorite"), method: :put %>
 <% end %><br>
+<%= pluralize(@school.ratings.size, "user") %> rated this school <%= @school.ratings.average(:value) %>/5.0 <br/>
+
 <strong>Address:</strong> <br/> <%= @school.address %> <br/>
 <br/><strong>Grades (subject, grade, average mark):</strong> <br/> 
 <% @school.grades.each do |grade| %>
@@ -24,7 +25,7 @@
 </table> 
 <script>generateMap('<%= @school.address %>')</script>
 <div id="googleMap"></div>
-<% if user_signed_in? && !admin_signed_in? %>
+<% if user_signed_in? && !admin_signed_in?%>
 	<%= render 'ratings/form' %>
 <% end %>
 </div>
