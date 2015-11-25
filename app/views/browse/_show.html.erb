@@ -47,4 +47,7 @@ table#surveyTable th	{
 </table> 
 <script>generateMap('<%= @school.address %>')</script>
 <div id="googleMap"></div>
+<% if user_signed_in? && !admin_signed_in? %>
+	<%= render 'ratings/form' %>
+<% end %>
 </div>

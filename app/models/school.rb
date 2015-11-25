@@ -3,6 +3,7 @@ class School < ActiveRecord::Base
 
   has_many :favorite_schools
   has_many :favorited_by, through: :favorite_schools, source: :user
+  has_many :ratings, dependent: :destroy
   has_many :grades, dependent: :destroy
   has_many :surveys, dependent: :destroy
   validates :name, presence: true

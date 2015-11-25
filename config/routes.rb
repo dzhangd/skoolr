@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     resources :grades
     resources :surveys
+	resources :ratings
 
     put :favorite, on: :member
   end

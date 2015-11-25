@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122044940) do
+ActiveRecord::Schema.define(version: 20151124234422) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 20151122044940) do
   end
 
   add_index "grades", ["school_id"], name: "index_grades_on_school_id"
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "value"
+    t.integer  "user"
+    t.integer  "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["school_id"], name: "index_ratings_on_school_id"
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"
