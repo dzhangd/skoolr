@@ -58,3 +58,5 @@ gem 'gmaps4rails'
 gem 'roo'
 gem 'roo-xls'
 gem 'devise'
+
+gem 'coffee-script-source', '1.8.0'
