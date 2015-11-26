@@ -21,6 +21,6 @@ class GradesController < ApplicationController
  
   private
     def grade_params
-      params.require(:grade).permit(:subject, :grade, :average_mark)
+      params.require(:grade).permit(:subject, :average_mark)
     end
 end

@@ -18,9 +18,9 @@ rated this school
 <% end %>
 
 <strong>Address:</strong> <br/> <%= @school.address %> <br/>
-<br/><strong>Grades (subject, grade, average mark):</strong> <br/> 
+<br/><strong>Grades:</strong> <br/> 
 <% @school.grades.each do |grade| %>
-	<span class="graph" style="padding: 0 0 0 <%= grade.average_mark %>px"> <%= grade.average_mark %> </span> <%= grade.subject %> <%= grade.grade %> <br/>
+	<span class="graph" style="padding: 0 0 0 <%= grade.average_mark %>px"> <%= grade.average_mark %> </span> <%= grade.subject %> <br/>
 <% end %>
 <br/><strong>Surveys:</strong> <br/> 
 <table id="surveyTable">
