@@ -16,6 +16,11 @@ class SurveysController < ApplicationController
     @survey.destroy
     redirect_to school_path(@school)
   end
+
+  def import
+    Survey.import
+    redirect_to schools_path
+  end
   
   private
     def survey_params

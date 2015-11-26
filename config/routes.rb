@@ -10,10 +10,16 @@ Rails.application.routes.draw do
     post :fetch }
 
     resources :grades
-    resources :surveys
-	resources :ratings
+    resources :survey
+	  resources :ratings
 
     put :favorite, on: :member
+  end
+
+  resources :surveys do
+    collection {
+      post :import
+    }
   end
   
   resources :search

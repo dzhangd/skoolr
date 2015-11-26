@@ -27,16 +27,14 @@ rated this school
 <tr>
 <th>Total responses</th><th>many or all</th><th>at no time</th><th>few times</th><th>some times</th>
 </tr>
-<% @surveys.each do |survey| %>
 	<tr>
-		<td><%= survey.many_or_all_responses + survey.at_no_time_responses + survey.few_times_responses + survey.some_times_responses%></td> <td><%= survey.many_or_all_responses %></td> <td><%= survey.at_no_time_responses %></td> <td><%= survey.few_times_responses %></td> <td><%= survey.some_times_responses %></td>
+		<td><%= @survey.many_or_all_responses + @survey.at_no_time_responses + @survey.few_times_responses + @survey.some_times_responses%></td> <td><%= @survey.many_or_all_responses %></td> <td><%= @survey.at_no_time_responses %></td> <td><%= @survey.few_times_responses %></td> <td><%= @survey.some_times_responses %></td>
 	</tr>
-<% end %>
 </table> 
 <script>generateMap('<%= @school.address %>')</script>
 <div id="googleMap"></div>
 
-<div
+<div>
 <a class="twitter-timeline" href="https://twitter.com/VSB39" data-widget-id="669735318787002368">Tweets by @VSB39</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>

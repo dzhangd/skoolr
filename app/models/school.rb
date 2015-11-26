@@ -5,7 +5,7 @@ class School < ActiveRecord::Base
   has_many :favorited_by, through: :favorite_schools, source: :user
   has_many :ratings, dependent: :destroy
   has_many :grades, dependent: :destroy
-  has_many :surveys, dependent: :destroy
+  has_one :survey, dependent: :destroy
   validates :name, presence: true
   validates :address, presence: true
   
