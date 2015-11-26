@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126060220) do
+ActiveRecord::Schema.define(version: 20151126064107) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20151126060220) do
 
   create_table "grades", force: :cascade do |t|
     t.string   "subject"
-    t.integer  "grade"
     t.integer  "average_mark"
     t.integer  "school_id"
     t.datetime "created_at",   null: false
