@@ -21,4 +21,8 @@ class PagesController < ApplicationController
 		@favorites = current_user.favorites
 	end
 
+	def socialmedia
+
+	end
+
 end

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/login' => 'pages#login'
   get '/admin' => 'schools#index'
+  get '/socialmedia' => 'pages#socialmedia'
   get '/profile' => 'pages#profile'
   get '*path' => 'pages#home'
 
