@@ -25,11 +25,11 @@ rated this school
 <br/><strong>Surveys:</strong> <br/> 
 <table id="surveyTable">
 <tr>
-<th>Question</th><th>Total responses</th><th>many or all</th><th>at no time</th><th>few times</th><th>some times</th>
+<th>Total responses</th><th>many or all</th><th>at no time</th><th>few times</th><th>some times</th>
 </tr>
-<% @school.surveys.each do |survey| %>
+<% @surveys.each do |survey| %>
 	<tr>
-		<td><%= survey.question %></td> <td><%= survey.non_excluded_responses %></td> <td><%= survey.many_or_all_responses %></td> <td><%= survey.at_no_time_responses %></td> <td><%= survey.few_times_responses %></td> <td><%= survey.some_times_responses %></td>
+		<td><%= survey.many_or_all_responses + survey.at_no_time_responses + survey.few_times_responses + survey.some_times_responses%></td> <td><%= survey.many_or_all_responses %></td> <td><%= survey.at_no_time_responses %></td> <td><%= survey.few_times_responses %></td> <td><%= survey.some_times_responses %></td>
 	</tr>
 <% end %>
 </table> 

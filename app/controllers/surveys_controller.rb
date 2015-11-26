@@ -19,6 +19,6 @@ class SurveysController < ApplicationController
   
   private
     def survey_params
-	  params.require(:survey).permit(:question, :non_excluded_responses, :many_or_all_responses, :at_no_time_responses, :few_times_responses, :some_times_responses)
+	  params.require(:survey).permit(:many_or_all_responses, :at_no_time_responses, :few_times_responses, :some_times_responses)
     end
 end

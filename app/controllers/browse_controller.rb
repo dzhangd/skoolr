@@ -11,6 +11,7 @@ class BrowseController < ApplicationController
 
 	def show
 		@school = School.find(params[:id])
+		@surveys = @school.surveys
 		if (params[:search])
 			@schools = School.search(params[:search])
 		else

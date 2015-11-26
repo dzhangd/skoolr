@@ -30,14 +30,6 @@
 <h2>Surveys</h2>
 <% @school.surveys.each do |survey| %>
   <p>
-    <strong>Question</strong>
-    <%= survey.question %>
-  </p>
-  <p>
-    <strong>Non excluded responses</strong>
-    <%= survey.non_excluded_responses %>
-  </p>
-  <p>
     <strong>Many or all responses</strong>
     <%= survey.many_or_all_responses %>
   </p>
