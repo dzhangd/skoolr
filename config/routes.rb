@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
 
   devise_for :admins
-  devise_for :users, controllers: {
-      sessions: 'users/sessions'
-  }
+
+ devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+
   resources :schools do
     collection { post :import
     post :fetch }
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/login' => 'pages#login'
   get '/admin' => 'schools#index'
+  get '/socialmedia' => 'pages#socialmedia'
   get '/profile' => 'pages#profile'
   get '*path' => 'pages#home'
 
