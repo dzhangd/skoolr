@@ -1,7 +1,7 @@
 <h2>Manage Schools</h2>
 <div class="button-row">
-	<%= button_to "Update schools from server", fetch_schools_path, class: "btn btn-primary" %>
-	<%= button_to "Add school manually", new_school_path, class: "btn btn-primary" %>
+  <%= button_to "Update schools from server", fetch_schools_path, class: "btn btn-primary" %>
+  <%= button_to "Add school manually", new_school_path, :method => :get, class: "btn btn-primary" %>
   <%= button_to "Add survey data", import_surveys_path, class: "btn btn-primary" %>
   <%= button_to "Add grades data", import_grades_path, class: "btn btn-primary" %>
 </div><br/>
