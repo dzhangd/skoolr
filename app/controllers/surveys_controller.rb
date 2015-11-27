@@ -13,7 +13,7 @@ class SurveysController < ApplicationController
   def update
 	@survey = Survey.find(params[:id])
 	if @survey.update(survey_params)
-		redirect_to school_path(@survey.school)
+		@redirect_to school_path(@survey.school)
 	else
 		render 'schools/edit'
 	end
