@@ -9,7 +9,7 @@ class GradeTest < ActiveSupport::TestCase
   
   test "should_not_save_grade_empty_subject" do
     grade = Grade.new
-	grade.average_mark = "grade average_mark"
+	grade.average_mark = 100
 	assert_not grade.save
   end
   
@@ -22,7 +22,7 @@ class GradeTest < ActiveSupport::TestCase
   test "should_save_grade_complete" do
     grade = Grade.new
 	grade.subject = "grade subject"
-	grade.average_mark = "grade average_mark"
+	grade.average_mark = 100
 	assert grade.save
   end
   
