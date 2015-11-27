@@ -23,7 +23,7 @@ class SchoolTest < ActiveSupport::TestCase
     school = School.new
 	school.name = "school name"
 	school.address = "school address"
-	assert_not school.save
+	assert school.save
   end
   
 end
