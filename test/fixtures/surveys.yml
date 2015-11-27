@@ -1,31 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  school_year: MyString
-  question: MyString
-  grade_group: MyString
   non_excluded_responses: 1
   many_or_all_responses: 1
-  many_or_all_pct: 1
   at_no_time_responses: 1
-  at_no_time_pct: 1
   few_times_responses: 1
-  few_times_pct: 1
   some_times_responses: 1
-  some_times_pct: 1
   school_id: 
 
 two:
-  school_year: MyString
-  question: MyString
-  grade_group: MyString
   non_excluded_responses: 1
   many_or_all_responses: 1
-  many_or_all_pct: 1
   at_no_time_responses: 1
-  at_no_time_pct: 1
   few_times_responses: 1
-  few_times_pct: 1
   some_times_responses: 1
-  some_times_pct: 1
   school_id: 
