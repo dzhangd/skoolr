@@ -14,9 +14,6 @@
           <th>Address</th>
           <th></th>
           <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
         </tr>
       </thead>
 
@@ -26,7 +23,6 @@
 		<td><%= link_to "", school_path(school), class: "glyphicon glyphicon-search" %> <%= school.name %></td>
 		<td><%= school.address %></td>
 		<td><%= link_to "", edit_school_path(school), class: "glyphicon glyphicon-pencil" %></td>
-		<td></td>
 		<td><%= link_to "", school_path(school),
 				method: :delete,
 				data: { confirm: "Are you sure?" },
