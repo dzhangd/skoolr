@@ -18,6 +18,11 @@ class GradesController < ApplicationController
     @grade.destroy
     redirect_to school_path(@school)
   end
+
+  def import
+    Grade.import
+    redirect_to :back
+  end
  
   private
     def grade_params

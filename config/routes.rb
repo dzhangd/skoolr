@@ -21,6 +21,12 @@ Rails.application.routes.draw do
       post :import
     }
   end
+
+  resources :grades do
+    collection {
+      post :import
+    }
+  end
   
   resources :search
   resources :browse
