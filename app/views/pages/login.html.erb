@@ -1,5 +1,7 @@
 <!--<div ng-controller="LoginCtrl">-->
 
 <!--</div>-->
-<%= button_to "User login", new_user_session_path %>
-<%= button_to "Admin login", new_admin_session_path %>
+<div class = "button-row">
+  <%= button_to "User login", new_user_session_path, class: "btn btn-primary"%>
+  <%= button_to "Admin login", new_admin_session_path, class: "btn btn-primary" %>
+</div>
