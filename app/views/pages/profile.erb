@@ -1,7 +1,8 @@
-<%= link_to "Edit Profile", edit_user_registration_path %>
 <h1>Favorites</h1>
 <table>
   <% @favorites.each do |school| %>
-    <tr><td><%= school.name %></td></tr>
+    <tr><td><%= link_to school.name, browse_path(school.id) %></td></tr>
   <% end %>
 </table>
+
+<%= button_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary", method: :get  %>
