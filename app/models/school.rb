@@ -16,7 +16,8 @@ class School < ActiveRecord::Base
     xls = Roo::Spreadsheet.open(file, extension: :xls)
     xls.each(name: 'SCHOOL_NAME', address: 'ADDRESS') do |hash|
       if valid?(hash)
-        School.create(name: hash[:name].split(' ')[0...-1].join(' '), address: hash[:address] + " Vancouver")
+        school = School.create(name: hash[:name].split(' ')[0...-1].join(' '), address: hash[:address] + " Vancouver")
+		school.create_survey(school_id: school.id, many_or_all_responses: 0, at_no_time_responses: 0, few_times_responses: 0, some_times_responses: 0)
       end
     end
   end

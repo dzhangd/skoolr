@@ -26,10 +26,10 @@ rated this school
 <br/><strong>Surveys:</strong> <br/> 
 <table id="surveyTable">
 <tr>
-<th>Total responses</th><th>many or all</th><th>at no time</th><th>few times</th><th>some times</th>
+<th>Total responses</th><th>Very satisfied</th><th>Somewhat satisfied</th><th>Neither satisifed nor dissatisfied</th><th>Dissatisfied</th>
 </tr>
 	<tr>
-		<td><%= @survey.many_or_all_responses + @survey.at_no_time_responses + @survey.few_times_responses + @survey.some_times_responses%></td> <td><%= @survey.many_or_all_responses %></td> <td><%= @survey.at_no_time_responses %></td> <td><%= @survey.few_times_responses %></td> <td><%= @survey.some_times_responses %></td>
+		<td><%= @survey.many_or_all_responses + @survey.at_no_time_responses + @survey.few_times_responses + @survey.some_times_responses%></td> <td><%= @survey.many_or_all_responses %></td> <td><%= @survey.some_times_responses %></td> <td><%= @survey.few_times_responses %></td> <td><%= @survey.at_no_time_responses %></td>
 	</tr>
 </table> 
 <% end %>

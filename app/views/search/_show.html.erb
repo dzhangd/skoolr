@@ -8,10 +8,10 @@
 <% if @school.survey != nil %>
 <table id="surveyTable">
 <tr>
-<th>Total responses</th><th>many or all</th><th>at no time</th><th>few times</th><th>some times</th>
+<th>Total responses</th><th>Very satisfied</th><th>Somewhat satisfied</th><th>Neither satisifed nor dissatisfied</th><th>Dissatisfied</th>
 </tr>
 	<tr>
-		<td><%= @school.survey.many_or_all_responses + @school.survey.at_no_time_responses + @school.survey.few_times_responses + @school.survey.some_times_responses%></td> <td><%= @school.survey.many_or_all_responses %></td> <td><%= @school.survey.at_no_time_responses %></td> <td><%= @school.survey.few_times_responses %></td> <td><%= @school.survey.some_times_responses %></td>
+		<td><%= @school.survey.many_or_all_responses + @school.survey.at_no_time_responses + @school.survey.few_times_responses + @school.survey.some_times_responses%></td> <td><%= @school.survey.many_or_all_responses %></td> <td><%= @school.survey.some_times_responses %></td> <td><%= @school.survey.few_times_responses %></td> <td><%= @school.survey.at_no_time_responses %></td>
 	</tr>
 </table> 
 <% end %>
