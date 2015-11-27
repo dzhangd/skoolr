@@ -6,5 +6,7 @@
 
 <%= render 'grades/form' %>
 
-<h2>Add survey:</h2>
+<% if @school.survey != nil %>
+<h2>Edit survey:</h2>
 <%= render 'surveys/form' %>
+<% end %>

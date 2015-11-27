@@ -21,27 +21,22 @@
                data: { confirm: 'Are you sure?' } %>
   </p>
 <% end %>
+<% if @survey != nil %>
 <h2>Surveys</h2>
-<% @school.surveys.each do |survey| %>
   <p>
     <strong>Many or all responses</strong>
-    <%= survey.many_or_all_responses %>
+    <%= @survey.many_or_all_responses %>
   </p>
   <p>
     <strong>At time responses</strong>
-    <%= survey.at_no_time_responses %>
+    <%= @survey.at_no_time_responses %>
   </p>
   <p>
     <strong>Few times responses</strong>
-    <%= survey.few_times_responses %>
+    <%= @survey.few_times_responses %>
   </p>
   <p>
     <strong>Some times responses</strong>
-    <%= survey.some_times_responses %>
-  </p>
-  <p>
-    <%= link_to 'Destroy Survey', [survey.school, survey],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+    <%= @survey.some_times_responses %>
   </p>
 <% end %>

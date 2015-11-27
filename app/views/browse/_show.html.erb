@@ -22,6 +22,7 @@ rated this school
 <% @school.grades.each do |grade| %>
 	<span class="graph" style="padding: 0 0 0 <%= grade.average_mark %>px"> <%= grade.average_mark %> </span> <%= grade.subject %> <br/>
 <% end %>
+<% if @survey != nil %>
 <br/><strong>Surveys:</strong> <br/> 
 <table id="surveyTable">
 <tr>
@@ -31,6 +32,7 @@ rated this school
 		<td><%= @survey.many_or_all_responses + @survey.at_no_time_responses + @survey.few_times_responses + @survey.some_times_responses%></td> <td><%= @survey.many_or_all_responses %></td> <td><%= @survey.at_no_time_responses %></td> <td><%= @survey.few_times_responses %></td> <td><%= @survey.some_times_responses %></td>
 	</tr>
 </table> 
+<% end %>
 <script>generateMap('<%= @school.address %>')</script>
 <div id="googleMap"></div>
 
