@@ -24,19 +24,19 @@
 <% if @survey != nil %>
 <h2>Surveys</h2>
   <p>
-    <strong>Many or all responses</strong>
+    <strong>Very satisfied</strong>
     <%= @survey.many_or_all_responses %>
   </p>
   <p>
-    <strong>At time responses</strong>
-    <%= @survey.at_no_time_responses %>
+    <strong>Somewhat satisfied</strong>
+    <%= @survey.some_times_responses %>
   </p>
   <p>
-    <strong>Few times responses</strong>
+    <strong>Neither satisifed nor dissatisfied</strong>
     <%= @survey.few_times_responses %>
   </p>
   <p>
-    <strong>Some times responses</strong>
-    <%= @survey.some_times_responses %>
+    <strong>Dissatisfied</strong>
+    <%= @survey.at_no_time_responses %>
   </p>
 <% end %>
