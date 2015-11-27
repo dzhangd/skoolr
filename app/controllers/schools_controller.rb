@@ -19,7 +19,7 @@ class SchoolsController < ApplicationController
 
 	def create
 		@school = School.new(school_params)
-
+		@school.create_survey(school_id: @school.id, many_or_all_responses: 0, at_no_time_responses: 0, few_times_responses: 0, some_times_responses: 0)
 		if @school.save
 			redirect_to @school
 		else
